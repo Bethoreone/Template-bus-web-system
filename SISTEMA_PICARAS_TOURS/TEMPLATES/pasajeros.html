@@ -1,0 +1,93 @@
+
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css">
+  <link rel="stylesheet" href="//rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/editable/bootstrap-table-editable.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.js"></script>
+  <script src="//rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+  <body>
+    <div class="container">
+      <h1>Tabla de pasajeros</h1>
+   
+      <table id="table" 
+            data-toggle="table"
+            data-search="true"
+            data-filter-control="true" 
+            data-show-export="true"
+            data-click-to-select="true"
+            data-toolbar="#toolbar"
+            class="table-responsive">
+          <thead>
+            <tr>
+              <th data-field="state" data-checkbox="true"></th>
+              <th data-field="id" data-filter-control="select" data-sortable="true">ID pasajero</th>
+              <th data-field="name" data-filter-control="select" data-sortable="true">Nombre del pasajero</th>
+              <th data-field="dateout" data-filter-control="select" data-sortable="true">Edad</th>
+              <th data-field="noasiento" data-filter-control="select" data-sortable="true">Número de asiento</th>
+              <th data-field="datecomeback" data-filter-control="select" data-sortable="true">Estado del pago</th>
+              <th data-field="price" data-filter-control="select" data-sortable="true">Saldo del pago</th>
+              <th data-field="idviaje" data-filter-control="select" data-sortable="true">ID del viaje</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for item in data %}
+            <tr>
+                <td>{{item['lol']}}</td>
+                <td>{{item['id_cliente']}}</td>
+                <td>{{item["nombre_cliente"]}}</td>
+                <td>{{item["edad"]}}</td>
+                <td>{{item["no_asiento"]}}</td>
+                <td>{{item["estado_pago"]}}</td>
+                <td>{{item["saldo_pago"]}}</td>
+                <td>{{item["id_viaje"]}}</td> 
+                
+            </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+    </div>
+    
+    
+
+    <script>
+      var $table = $('#tb_viajes');
+      $(function () {
+          $('#toolbar').find('select').change(function () {
+              $table.bootstrapTable('refreshOptions', {
+                  exportDataType: $(this).val()
+              });
+          });
+      })
+
+      var trBoldBlue = $("tb_viajes");
+
+    $(trBoldBlue).on("click", "tr", function (){
+        $(this).toggleClass("bold-blue");
+    });
+  
+
+    </script>
+
+  </body>
+
+  
+</html>
+{% endblock %}
+

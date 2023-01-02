@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+<div class="container">
+<h1>Agregar pasajero</h1>
+
+<form method = "POST" action = "/clientesform">
+  <div class="form-group ">
+    <label for="Nombre">Nombre del cliente</label>
+    <input type="text" class="form-control" name = "nombrecliente" placeholder="Nombre">
+  </div>
+  <div class="form-group ">
+    <label for="Destino">Edad</label>
+    <input type="text" class="form-control"  name = "edad" placeholder="Años de edad">
+  </div>
+
+  
+  <div class="form-group ">
+    <label for="Asiento">Seleccionar asiento (Asientos del 1-45):</label>
+    <input type="number" id="noasiento" name="noasiento" min="1" max="45">
+    </div>
+  
+  <div class="form-group ">
+    <label for="saldodeudor2">Selecciona el estado de pago:</label>
+    <select id="saldodeudor" name="saldodeudor2">
+      <option value="Pagado">Pagado</option>
+      <option value="Pendiente">Pendiente</option>
+    </select>
+    </div>  
+  <div class="form-group ">
+    <label for="Saldo pagado">Saldo de pago</label>
+    <input type="text" class="form-control" name="saldopago" placeholder="Saldo pagado">
+  </div>
+  <div class="form-group ">
+    <label for="Identificador">No. identificador de viaje</label>
+    <input type="text" class="form-control" name="idviaje" placeholder="Viaje">
+  </div>    
+  
+  <button type="submit" class="">Enviar</button>
+
+</form>
+
+
+</div>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById('id01');
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+  </script>
+</body>
+</html>
+
+
+{% endblock %}
+
+
+
+
+
+
+<!--
+ <div class="form-group ">
+  <label for="Asiento">Seleccionar asiento (Asientos del 1-45):</label>
+  <input type="number" id="noasiento" name="noasiento" min="1" max="45">
+  </div>  -->

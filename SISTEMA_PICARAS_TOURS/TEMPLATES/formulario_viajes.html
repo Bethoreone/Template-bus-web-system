@@ -1,0 +1,64 @@
+
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+<div class="container">
+<h1>Crear viaje</h1>
+
+<form method = "POST" action = "/viajesform">
+  <div class="form-group ">
+    <label for="Nombre">Nombre del viaje</label>
+    <input type="text" class="form-control" name = "nombreviaje" placeholder="Nombre">
+  </div>
+  <div class="form-group ">
+    <label for="Destino">Destino</label>
+    <input type="text" class="form-control"  name = "destino" placeholder="Destino">
+  </div>
+  <div class="form-group">
+    <label for="Fecha de salida">Fecha de salida </label>
+    <input type="date"  id="Fecha de salida" name="fechasalida" value="today">
+  </div>  
+  <div class="form-group ">
+    <label for="Fecha de salida">Fecha de regreso</label>
+    <input type="date"  id="Fecha de regreso" name="fecharegreso" value="today">
+  </div>  
+  <div class="form-group ">
+    <label for="Precio">Precio</label>
+    <input type="text" class="form-control" name="precio" placeholder="Precio">
+  </div>  
+  
+  <button type="submit" class="">Enviar</button>
+
+</form>
+
+
+</div>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById('id01');
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+  </script>
+</body>
+</html>
+
+
+{% endblock %}
+

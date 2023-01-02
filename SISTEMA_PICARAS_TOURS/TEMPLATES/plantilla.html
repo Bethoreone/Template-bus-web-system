@@ -1,0 +1,279 @@
+{% extends 'layout.html' %}
+
+{% block title %}Plantilla de autobus{% endblock %}
+
+{% block content %}
+<h2>PLANTILLA DE AUTOBUS</h2>
+<p></p>
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css">
+  <link rel="stylesheet" href="//rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/editable/bootstrap-table-editable.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.js"></script>
+  <script src="//rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js"></script>
+
+  
+
+</head>
+
+
+<body>
+    <div >
+     <form  method="post" action = "/nombreviaje">
+        <label for="nombreviaje"><h3>  Elige un viaje:</h3></label>
+        <br>
+        
+        <select  id="nombreviaje" name="nombreviaje" placeholder = "Viajes" onchange="this.form.submit()" >
+            <option value = ""> Viajes</option> 
+            {% for item in data %}
+            <option value = "{{item["nombre_viaje"]}}" >  {{item["nombre_viaje"]}}</option>
+            {% endfor %} 
+        </select>
+        <p></p>
+        <p></p>
+        
+    </form> 
+</div>
+    
+<form method = "POST" action = "/asiento">
+    <input hidden type = "text" value = "{{idviajeselect}}" readonly name ="idviaje">
+    <input hidden type = "text" value = "{{viajeselect}}" readonly name ="nombreviajedetails">
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-4">
+                         
+                        <button type="submit" class="btn btn-success btn-sm" value = "1" name = "asiento">
+                            01
+                        </button> 
+                        <button type="submit" class="btn btn-success btn-sm" value = "5" name = "asiento">
+                            05
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "9" name = "asiento">
+                            09
+                        </button> 
+                        <button type="submit" class="btn btn-success btn-sm" value = "13" name = "asiento">
+                            13
+                        </button> 
+                        <button type="submit" class="btn btn-success btn-sm" value = "17" name = "asiento">
+                            17
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "21" name = "asiento">
+                            21
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "25" name = "asiento">
+                            25
+                        </button> 
+                        <button type="submit" class="btn btn-success btn-sm" value = "29" name = "asiento">
+                            29
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "33" name = "asiento">
+                            33
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "37" name = "asiento">
+                            37
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "41" name = "asiento">
+                            41
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-4">
+                         
+                        <button type="submit" class="btn btn-success btn-sm" value = "2" name = "asiento">
+                            02
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "6" name = "asiento">
+                            06
+                        </button> 
+                        <button type="submit" class="btn btn-success btn-sm" value = "10" name = "asiento">
+                            10
+                        </button> 
+                        <button type="submit" class="btn btn-success btn-sm" value = "14" name = "asiento">
+                            14
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "18" name = "asiento">
+                            18
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "22" name = "asiento">
+                            22
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "26" name = "asiento">
+                            26
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "30" name = "asiento">
+                            30
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "34" name = "asiento">
+                            34
+                        </button> 
+                        <button type="submit" class="btn btn-success btn-sm" value = "38" name = "asiento">
+                            38
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "42" name = "asiento">
+                            42
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-4">
+                         
+                        <button type="submit" class="btn btn-success btn-sm" value = "3" name = "asiento">
+                            03
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "7" name = "asiento">
+                            07
+                        </button> 
+                        <button type="submit" class="btn btn-success btn-sm" value = "11" name = "asiento">
+                            11
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "15" name = "asiento">
+                            15
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "19" name = "asiento">
+                            19
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "23" name = "asiento">
+                            23
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "27" name = "asiento">
+                            27
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "31" name = "asiento">
+                            31
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "35" name = "asiento">
+                            35
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm" value = "39" name = "asiento">
+                            39
+                        </button> 
+                        <button type="submit" class="btn btn-success btn-sm" value = "43" name = "asiento">
+                            43
+                        </button>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-4">
+                         
+                        <button type="submit" class="btn btn-success btn-sm" value = "4" name = "asiento">
+                            04
+                        </button>
+                        
+                        <button type="submit" class="btn btn-success btn-sm" value = "8" name = "asiento">
+                            08
+                        </button>
+                        
+                        <button type="submit" class="btn btn-success btn-sm" value = "12" name = "asiento">
+                            12
+                        </button>
+                        
+                        <button type="submit" class="btn btn-success btn-sm" value = "16" name = "asiento">
+                            16
+                        </button>
+                        
+                        <button type="submit" class="btn btn-success btn-sm" value = "20" name = "asiento">
+                            20
+                        </button>
+                       
+                        <button type="submit" class="btn btn-success btn-sm" value = "24" name = "asiento">
+                            24
+                        </button>
+                       
+                        <button type="submit" class="btn btn-success btn-sm" value = "28" name = "asiento">
+                            28
+                        </button>
+                        
+                        <button type="submit" class="btn btn-success btn-sm" value = "32" name = "asiento">
+                            32
+                        </button>
+                        
+                        <button type="submit" class="btn btn-success btn-sm" value = "36" name = "asiento">
+                            36
+                        </button>
+                       
+                        <button type="submit" class="btn btn-success btn-sm" value = "40" name = "asiento">
+                            40
+                        </button>
+
+                        <button type="submit" class="btn btn-success btn-sm" value = "44" name = "asiento">
+                            44
+                        </button>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+
+ <div class="col-md-6">
+    <div class="tabbable" id="tabs-78669">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active show" href="#tabdetalles" data-toggle="tab">DETALLES</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+        <div class="tab-pane active" id="panel-997544">
+        </div>
+            <div class="tab-pane active" id="tabdetalles">
+                <p>
+                    
+                    <div >
+                            <!--class="form-group"-->
+                            <div class="row">
+                                <label>NOMBRE DEL VIAJE: <p>{{ viajeselect }}</p> </label>
+                                <!--<input  type "text" value = " {{ idviajeselect }}" readonly >-->
+                            </div>
+
+                        <div class ="row" style="height:10vh;width:25vw;">
+                            <label for="nombrepasajero">Nombre del pasajero</label>
+                               
+                            <input type="text" class = "formcontrol" id="nombrepasajero" placeholder = "{{ data_nombre }}" >
+
+                            <label for="numeroasiento">Numero de asiento</label>
+                                
+                            <input type="text" class="formcontrol" id="numeroasiento" placeholder = "{{ data_asiento }}" >
+                               
+                            <label for="estadoasiento">Estado</label>
+                                 
+                            <input type="text" class="formcontrol" id="estadoasiento" placeholder = "{{ data_pago }}" >
+
+                        </div>
+
+                    </div>
+
+                    <div >
+                        
+                    </div>
+
+                </p>
+            </div>
+        </div>
+    </div> 
+    
+ </div>
+</form>
+
+</body>
+
+
+<footer>
+</footer>
+
+  
+{% endblock %}
